@@ -1,0 +1,9 @@
+{
+    "require": {
+        "yiisoft/yii": "1.1.14",
+	"clevertech/yii-booster": "v2.0.0"
+    },
+    "config":{
+                "vendor-dir": "www/protected/vendor"
+    } 
+}
