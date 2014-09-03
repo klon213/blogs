@@ -20,6 +20,9 @@ class TblUsers extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+    public $pic;
+    public $repeatPass;
+
 	public function tableName()
 	{
 		return 'tbl_users';
@@ -33,9 +36,14 @@ class TblUsers extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, login', 'required'),
+			array('name, login, email, pass', 'required'),
 			array('is_verified', 'numerical', 'integerOnly'=>true),
 			array('name, login, avatar, pass, email', 'length', 'max'=>255),
+            array('login, email', 'unique'),
+            array('pic', 'file', 'types'=>'jpg, jpeg, gif, png', 'safe'=>true, 'allowEmpty'=>true),
+            array('pic', 'safe'),
+           // array('pass', 'compare', 'compareAttribute'=>'repeatPass'),
+           // array('repeatPass'=>'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name, login, avatar, pass, email, is_verified', 'safe', 'on'=>'search'),
@@ -101,12 +109,22 @@ class TblUsers extends CActiveRecord
 		));
 	}
 
-    public function beforeSave() {
-        if ($this->isNewRecord) // <---- the difference
+    public function beforeSave()
+    {
+        if ($this->isNewRecord){
+            //DBug::stop($_POST);
             $this->pass=md5($this->pass);
-        return true;
+            $pic = CUploadedFile::getInstanceByName('pic');
+            if(isset($pic)){
+                $picName = Yii::getPathOfAlias('webroot.images') . DIRECTORY_SEPARATOR . $this->login . '.' . $pic->extensionName;
+                $pic->saveAs($picName);
+            }
+			UserValidate::sendValidationMail($this->login, $this->email);
+        }
+        return !$this->hasErrors();
     }
-	/**
+
+    /**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.

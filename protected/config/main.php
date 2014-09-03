@@ -16,6 +16,8 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+        'application.extensions.*',
+		'application.helpers.*',
 	),
 
 	'modules'=>array(
@@ -35,6 +37,12 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+		'mail' => array(
+			'class' => 'ext.yii-mail.YiiMail',
+			'transportType' => 'php',
+			'viewPath' => 'application.views.mail',
+			'logging' => true,
+			'dryRun' => false),
 		// uncomment the following to enable URLs in path-format
 
 		'urlManager'=>array(
@@ -86,5 +94,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
+		'key'=>'wobwobwobble',
 	),
 );

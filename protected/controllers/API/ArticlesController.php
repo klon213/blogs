@@ -15,7 +15,11 @@ class ArticlesController extends ApiController
     }
     public function actionListArticles()
     {
-        $data = $this->model->findAll('is_published = 0');
-        return $this->sendResponse(200, $data);
+       // $dateBegin = $_POST['date_begin'];
+        $dateEnd = $_POST['date_end'];
+       // echo $dateBegin;
+        $data = $this->model->findAll('is_published = 1');
+       // echo print_r ($data);
+        return $this->sendResponse($dateEnd);
     }
 }
