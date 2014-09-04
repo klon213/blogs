@@ -17,6 +17,8 @@
  */
 class TblArticles extends CActiveRecord
 {
+	const IS_PUBLISHED = 1;
+	public $pic;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -38,6 +40,8 @@ class TblArticles extends CActiveRecord
 			array('pic, title', 'length', 'max'=>255),
 			array('text', 'length', 'max'=>2048),
 			array('pub_date', 'safe'),
+			array('pic', 'file', 'types'=>'jpg, jpeg, gif, png', 'safe'=>true, 'allowEmpty'=>true),
+			array('pic', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, user_id, pic, title, text, is_published, pub_date', 'safe', 'on'=>'search'),
@@ -72,6 +76,47 @@ class TblArticles extends CActiveRecord
 		);
 	}
 
+	public function scopes()
+	{
+		return array(
+			'published'=>array(
+				'condition' => 'is_published=' . self::IS_PUBLISHED
+			),
+
+		);
+	}
+
+	public function beforeSave()
+	{
+		if ($this->isNewRecord){
+			$this->user_id = Yii::app()->user->id;
+			$pic = CUploadedFile::getInstanceByName('pic');
+			if(isset($pic)){
+				$picName = Yii::getPathOfAlias('webroot.images.articles') . DIRECTORY_SEPARATOR . $this->title . '.' . $pic->extensionName;
+				$pic->saveAs($picName);
+			}
+		}
+		return !$this->hasErrors();
+	}
+
+	public function beforeDelete()
+	{
+		if($this->user_id == Yii::app()->user->id)
+		{
+			return !$this->hasErrors();
+		}
+	}
+
+	public function published($begin, $end)
+	{
+		$this->getDbCriteria()->mergeWith(array(
+			'condition'=>"pub_date between :beginDate AND :endDate",
+				'params'=> array(":beginDate"=>$begin, ":endDate"=>$end
+				)
+		));
+		return $this;
+	}
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
@@ -101,6 +146,13 @@ class TblArticles extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	public function searchByDate($beginDate, $endDate)
+	{
+		$data = TblArticles::model()->findAll("(pub_date between :beginDate AND :endDate )",
+												array('beginDate'=>$beginDate, 'endDate'=>$endDate));
+		return $data;
 	}
 
 	/**

@@ -53,6 +53,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
                 'api/<controller>' => 'api/<controller>/index',
 			),
+			'showScriptName'=>false,
 		),
 
 	/*	'db'=>array(

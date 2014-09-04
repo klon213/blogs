@@ -7,19 +7,59 @@
  */
 class ArticlesController extends ApiController
 {
-    private $model;
+    public function actionIndex()
+    {
+		if (isset($_POST['begin_date']) && isset($_POST['end_date'])){
+			$data = TblArticles::model()->published($_POST['begin_date'], $_POST['end_date'])->findAll();
+		}else{
+			$data = TblArticles::model()->findAll('is_published=' . TblArticles::IS_PUBLISHED);
+		}
+        return $this->sendResponse($data);
 
-    public function __construct()
-    {
-        $this->model = new TblArticles();
     }
-    public function actionListArticles()
-    {
-       // $dateBegin = $_POST['date_begin'];
-        $dateEnd = $_POST['date_end'];
-       // echo $dateBegin;
-        $data = $this->model->findAll('is_published = 1');
-       // echo print_r ($data);
-        return $this->sendResponse($dateEnd);
-    }
+
+	public function actionView($id)
+	{
+		$data = TblArticles::model()->findByPk($id);
+		return $this->sendResponse($data);
+	}
+
+	/*
+		 * token : string
+		 * title : string
+		 * text : string
+		 * pic : image
+		 * */
+	public function actionCreate()
+	{
+		$model = new TblArticles();
+		$model->setAttributes($_POST);
+		$model->save();
+		$this->sendResponse($model);
+	}
+	/*
+	 * id : int
+	 * token : string
+	 * title : string
+	 * text : string
+	 * pic : image
+	 * */
+	public function actionEdit()
+	{
+		$article = TblArticles::model()->findByPk($_POST['id']);
+		$article->setAttributes($_POST);
+		$article->save();
+		$this->sendResponse($article);
+	}
+
+		/*
+	 	* id : int
+	 	* token : string
+		 */
+	public function actionDelete()
+	{
+		$article = TblArticles::model()->findByPk($_POST['id']);
+		$article->delete();
+		$this->sendResponse($article);
+	}
 }

@@ -31,8 +31,10 @@ class TblComments extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			//array('article_id', 'required'),
 			array('user_id, article_id, notify_author, parent_id', 'numerical', 'integerOnly'=>true),
-			array('guestmail', 'length', 'max'=>255),
+			array('guestmail','length', 'max'=>255),
+			array('guestmail', 'email'),
 			array('text', 'length', 'max'=>2048),
 			array('comment_sdate', 'safe'),
 			// The following rule is used by search().
@@ -49,6 +51,8 @@ class TblComments extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'user' => array(self::BELONGS_TO, 'TblUsers', 'user_id'),
+			'article' => array(self::BELONGS_TO, 'TblArticles', 'article_id'),
 		);
 	}
 
@@ -101,6 +105,26 @@ class TblComments extends CActiveRecord
 		));
 	}
 
+	public function beforeSave()
+	{
+		if(Yii::app()->user->id){
+			$this->user_id = Yii::app()->user->id;
+			return !$this->hasErrors();
+		}else{
+			if($this->guestmail){
+				return !$this->hasErrors();
+			}
+		}
+	}
+
+
+	public function beforeDelete()
+	{
+		if($this->user_id == Yii::app()->user->id)
+		{
+			return !$this->hasErrors();
+		}
+	}
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
