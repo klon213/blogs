@@ -11,7 +11,12 @@
 	<!--[if lt IE 8]>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
 	<![endif]-->
-
+	<?php Yii::app()->bootstrap->register(); ?>
+	<?php $baseUrl = Yii::app()->baseUrl;
+	$cs = Yii::app()->getClientScript();
+	$cs->registerScriptFile($baseUrl.'/angular/angular.min.js');
+	$cs->registerScriptFile("https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js")
+	?>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 
@@ -33,7 +38,8 @@
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Angular test', 'url'=>array('/site/angular')),
 			),
 		)); ?>
 	</div><!-- mainmenu -->

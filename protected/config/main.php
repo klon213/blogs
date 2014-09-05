@@ -18,7 +18,11 @@ return array(
 		'application.components.*',
         'application.extensions.*',
 		'application.helpers.*',
+		'bootstrap.helpers.TbHtml',
 	),
+	'aliases' => array(
+        'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'), // change this if necessary
+    ),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
@@ -28,6 +32,7 @@ return array(
 			'password'=>'suiseiseki',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
+			'generatorPaths' => array('bootstrap.gii'),
 		),
 	),
 
@@ -36,6 +41,9 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+		),
+		'bootstrap' => array(
+			'class' => 'bootstrap.components.TbApi',
 		),
 		'mail' => array(
 			'class' => 'ext.yii-mail.YiiMail',

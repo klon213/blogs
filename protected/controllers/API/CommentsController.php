@@ -30,6 +30,18 @@ class CommentsController extends ApiController
 	 * ||
 	 @token
  */
+	public function actionParentComment($id)
+	{
+		$comments = TblComments::model()->parentComment($id)->findAll();
+		$this->sendResponse($comments);
+	}
+
+	public function actionChildComment($id)
+	{
+		$comments = TblComments::model()->childComments(2)->findAll();
+		$this->sendResponse($comments);
+	}
+
 	public function actionComment()
 	{
 		if(!isset($_POST['article_id']))

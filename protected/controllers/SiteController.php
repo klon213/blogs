@@ -46,6 +46,31 @@ class SiteController extends Controller
 		}
 	}
 
+	public function actionAngular()
+	{
+		$this->render('angular');
+	}
+
+
+	public function actionArticles()
+	{
+		$this->render('articles');
+	}
+
+	public function actionRoute1()
+	{
+		echo "route1";
+	}
+
+	public function actionRoute2()
+	{
+		echo "route2";
+	}
+
+	public function actionListArticles()
+	{
+		echo "test"; //file_get_contents("angular.php");
+	}
 	/**
 	 * Displays the contact page
 	 */

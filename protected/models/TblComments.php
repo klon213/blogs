@@ -53,6 +53,7 @@ class TblComments extends CActiveRecord
 		return array(
 			'user' => array(self::BELONGS_TO, 'TblUsers', 'user_id'),
 			'article' => array(self::BELONGS_TO, 'TblArticles', 'article_id'),
+			//'tcomment' => array(self::BELONGS_TO, 'TblComments', 'parent_id'),
 		);
 	}
 
@@ -105,6 +106,33 @@ class TblComments extends CActiveRecord
 		));
 	}
 
+	public function scopes()
+	{
+		return array(
+			'parentComment'=>array(),
+			'childComments'=>array(),
+		);
+	}
+
+	public function parentComment($id)
+	{
+		$this->getDbCriteria()->mergeWith(array(
+			'condition'=>"article_id=:article",
+			'params'=> array(":article"=>$id
+			)
+		));
+		return $this;
+	}
+
+	public function childComments($parent_id)
+	{
+		$this->getDbCriteria()->mergeWith(array(
+				'condition'=>"id=:parent_id",
+				'params'=>array(":parent_id"=>$parent_id)
+			)
+		);
+	}
+
 	public function beforeSave()
 	{
 		if(Yii::app()->user->id){
@@ -116,7 +144,6 @@ class TblComments extends CActiveRecord
 			}
 		}
 	}
-
 
 	public function beforeDelete()
 	{
