@@ -26,6 +26,10 @@ class UserIdentity extends CUserIdentity
 		{
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		}
+        else if($record->is_verified==0)
+        {
+            $this->errorCode=self::ERROR_UNKNOWN_IDENTITY;
+        }
 		else
 		{
 			$this->_id=$record->id;
@@ -38,7 +42,9 @@ class UserIdentity extends CUserIdentity
 	{
 		$record=TblUsers::model()->findByAttributes(array('token_api'=>$this->password));
 		if($record===null)
+        {
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
+        }
 		//else if($record->pass!==crypt($this->password,$record->pass))
 		else if($record->token_api!==$this->password)
 		{

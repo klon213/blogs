@@ -114,6 +114,8 @@ class TblUsers extends CActiveRecord
         if ($this->isNewRecord){
             //DBug::stop($_POST);
             $this->pass=md5($this->pass);
+            $this->is_verified = 0;
+            $this->token_api = null;
             $pic = CUploadedFile::getInstanceByName('pic');
             if(isset($pic)){
                 $picName = Yii::getPathOfAlias('webroot.images') . DIRECTORY_SEPARATOR . $this->login . '.' . $pic->extensionName;

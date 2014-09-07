@@ -42,19 +42,7 @@ class UserController extends ApiController
 		}
 	}
 
-	public function actionAuthByToken()
-	{
-		if($this->verifyToken($_POST['token'])){
-			$user = TblUsers::model()->find("token_api='" . $_POST['token'] . "'");
-			$identity=new UserIdentity($user['login'], $_POST['token']);
-			if($identity->apiAuth()){
-				Yii::app()->user->login($identity);
-			  echo 'verified';
-			}
-		}else{
-			echo 'verification failure';
-		}
-	}
+
 
 	private function storeToken($login, $token)
 	{
@@ -63,12 +51,5 @@ class UserController extends ApiController
 		$user->update();
 	}
 
-	private function verifyToken($token)
-	{
-		$user = TblUsers::model()->find("token_api='" . $token . "'");
-		if($user['id']){
-			return true;
-		}else
-			return false;
-	}
+
 }

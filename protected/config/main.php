@@ -53,13 +53,16 @@ return array(
 			'dryRun' => false),
 		// uncomment the following to enable URLs in path-format
 
-		'urlManager'=>array(
+	    'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
                 'api/<controller>' => 'api/<controller>/index',
+
+                array('api/user/signUp', 'pattern'=>'api/<controller>', 'verb'=>'GET'),
+               // array('api/user/getValidationMail', 'pattern' => 'api/<model:\w+>/<validationKey:\d+>', 'verb'=>'GET'),
 			),
 			'showScriptName'=>false,
 		),

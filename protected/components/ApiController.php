@@ -117,4 +117,46 @@ class ApiController extends CController
         echo CJSON::encode($response);
         Yii::app()->end();
     }
+
+    protected function beforeAction($action)
+    {
+        $postData = json_decode(file_get_contents('php://input'), true);
+        if ($postData)
+            $_POST = array_merge_recursive($_POST, $postData);
+
+      //  list($controller) = Yii::app()->createController('User');
+       // $url=$controller->act();
+
+      //  $user = Yii::app()->createController('api/User');
+        $user = new UserValidate();
+
+        header('Content-type: application/json');
+
+
+
+        // authorization is necessary for the action and a token, then check them
+       // $needAuth = !in_array($action->id, $this->allowedActions);
+
+        $headers = apache_request_headers();
+
+        // trying to login
+        if (!empty($headers['Authorization']) && empty($_SERVER['PHP_AUTH_USER']))
+        {
+            if (!$login = $user->AuthByToken())
+            {
+             //   $this->sendResponse(self::STATUS_UNAUTHORIZED, $user->getErrors());
+                $this->sendResponse(self::STATUS_UNAUTHORIZED);
+            }
+        }
+
+      /*  if ($needAuth && empty($login))
+        {
+            if (empty($user) && !empty($userId))
+                $this->sendResponse(404);
+            else
+                $this->sendResponse(401);
+        }*/
+
+        return true;
+    }
 }
