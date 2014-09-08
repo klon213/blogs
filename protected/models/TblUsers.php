@@ -22,6 +22,7 @@ class TblUsers extends CActiveRecord
 	 */
 	const ROLE_USER = 'user';
 	const ROLE_GUEST = 'guest';
+	const ROLE_ADMIN = 'administrator';
 
     public $pic;
     public $repeatPass;

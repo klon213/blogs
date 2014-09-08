@@ -7,7 +7,32 @@
  */
 class ArticlesController extends ApiController
 {
-    public function actionIndex()
+
+	public function accessRules()
+	{
+		return array(
+			array(
+				'deny',
+				'actions' => array(
+				'index',
+				),
+				'roles' => array(
+					TblUsers::ROLE_ADMIN, // 'user'
+				),
+			),
+			array(
+				'allow',
+				'actions' => array(
+					'view',
+				),
+				'roles' => array(
+					User::ROLE_GUEST,
+				),
+			),
+		);
+	}
+
+	public function actionIndex()
     {
 		if (isset($_POST['begin_date']) && isset($_POST['end_date'])){
 			$data = TblArticles::model()->published($_POST['begin_date'], $_POST['end_date'])->findAll();

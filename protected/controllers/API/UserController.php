@@ -43,13 +43,20 @@ class UserController extends ApiController
 				$token = DCrypt::encrypt($_POST['login'] . time(), Yii::app()->params['key']);
 				$this->storeToken($_POST['login'], $token);
 				$this->sendResponse($token);
+			/*	if(Yii::app()->user->checkAccess('administrator')){
+					echo "hello, I'm administrator";
+				}*/
+				//$this->sendResponse($token);
 				//$model->
 			}else
 				$identity->errorMessage;
+
+
 			//Yii::app()->user->login($identity);
 // Выходим
 			//Yii::app()->user->logout();
 		}
+
 	}
 
 

@@ -1046,3 +1046,203 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/api/user/signIn
 ---
+2014/09/08 20:00:11 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.users" is not defined.' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CModule.php(105): CComponent->__get('users')
+#1 C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php(46): CModule->__get('users')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(49): UserController->actionGetToken()
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('getToken')
+#7 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/getTok...')
+#8 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/api/user/getToken
+---
+2014/09/08 20:06:33 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\protected\components\WebUser.php(19): spl_autoload_call()
+#1 C:\OpenServer\domains\blogs.org\protected\components\WebUser.php(12): WebUser->getModel()
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CComponent.php(111): WebUser->getRole()
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(146): WebUser->__get()
+#4 C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php(17): WebUser->__get()
+#5 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CModule.php(387): PhpAuthManager->init()
+#6 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(185): CWebApplication->getComponent()
+#7 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(815): CWebApplication->getAuthManager()
+#8 C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php(46): WebUser->checkAccess()
+#9 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(49): UserController->actionGetToken()
+#10 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(286): UserController->runAction()
+#12 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#13 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): UserController->run()
+#14 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\OpenServer\domains\blogs.org\index.php(13): CWebApplication->run()
+REQUEST_URI=/api/user/getToken
+in C:\OpenServer\domains\blogs.org\protected\components\WebUser.php (19)
+in C:\OpenServer\domains\blogs.org\protected\components\WebUser.php (12)
+in C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php (17)
+2014/09/08 20:07:04 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\protected\components\WebUser.php(19): spl_autoload_call()
+#1 C:\OpenServer\domains\blogs.org\protected\components\WebUser.php(12): WebUser->getModel()
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CComponent.php(111): WebUser->getRole()
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(146): WebUser->__get()
+#4 C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php(17): WebUser->__get()
+#5 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CModule.php(387): PhpAuthManager->init()
+#6 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(185): CWebApplication->getComponent()
+#7 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(815): CWebApplication->getAuthManager()
+#8 C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php(46): WebUser->checkAccess()
+#9 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(49): UserController->actionGetToken()
+#10 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(286): UserController->runAction()
+#12 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#13 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): UserController->run()
+#14 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\OpenServer\domains\blogs.org\index.php(13): CWebApplication->run()
+REQUEST_URI=/api/user/getToken
+in C:\OpenServer\domains\blogs.org\protected\components\WebUser.php (19)
+in C:\OpenServer\domains\blogs.org\protected\components\WebUser.php (12)
+in C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php (17)
+2014/09/08 20:09:43 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\protected\components\WebUser.php(19): spl_autoload_call()
+#1 C:\OpenServer\domains\blogs.org\protected\components\WebUser.php(12): WebUser->getModel()
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CComponent.php(111): WebUser->getRole()
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(146): WebUser->__get()
+#4 C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php(17): WebUser->__get()
+#5 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CModule.php(387): PhpAuthManager->init()
+#6 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(185): CWebApplication->getComponent()
+#7 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(815): CWebApplication->getAuthManager()
+#8 C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php(46): WebUser->checkAccess()
+#9 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(49): UserController->actionGetToken()
+#10 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(286): UserController->runAction()
+#12 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#13 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): UserController->run()
+#14 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\OpenServer\domains\blogs.org\index.php(13): CWebApplication->run()
+REQUEST_URI=/api/user/getToken
+in C:\OpenServer\domains\blogs.org\protected\components\WebUser.php (19)
+in C:\OpenServer\domains\blogs.org\protected\components\WebUser.php (12)
+in C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php (17)
+2014/09/08 20:11:14 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\protected\components\WebUser.php(19): spl_autoload_call()
+#1 C:\OpenServer\domains\blogs.org\protected\components\WebUser.php(12): WebUser->getModel()
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CComponent.php(111): WebUser->getRole()
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(146): WebUser->__get()
+#4 C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php(17): WebUser->__get()
+#5 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CModule.php(387): PhpAuthManager->init()
+#6 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(185): CWebApplication->getComponent()
+#7 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(815): CWebApplication->getAuthManager()
+#8 C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php(46): WebUser->checkAccess()
+#9 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(49): UserController->actionGetToken()
+#10 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(286): UserController->runAction()
+#12 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#13 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): UserController->run()
+#14 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\OpenServer\domains\blogs.org\index.php(13): CWebApplication->run()
+REQUEST_URI=/api/user/getToken
+in C:\OpenServer\domains\blogs.org\protected\components\WebUser.php (19)
+in C:\OpenServer\domains\blogs.org\protected\components\WebUser.php (12)
+in C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php (17)
+2014/09/08 20:12:48 [error] [exception.CException] exception 'CException' with message 'Unknown authorization item "".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CPhpAuthManager.php:179
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php(17): CPhpAuthManager->assign(NULL, '99')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CModule.php(387): PhpAuthManager->init()
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(185): CModule->getComponent('authManager')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(815): CWebApplication->getAuthManager()
+#4 C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php(46): CWebUser->checkAccess('administrator')
+#5 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(49): UserController->actionGetToken()
+#6 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('getToken')
+#10 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/getTok...')
+#11 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/api/user/getToken
+---
+2014/09/08 20:14:03 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\protected\components\WebUser.php(21): spl_autoload_call()
+#1 C:\OpenServer\domains\blogs.org\protected\components\WebUser.php(15): WebUser->getModel()
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CComponent.php(111): WebUser->getRole()
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(146): WebUser->__get()
+#4 C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php(17): WebUser->__get()
+#5 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CModule.php(387): PhpAuthManager->init()
+#6 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(185): CWebApplication->getComponent()
+#7 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(815): CWebApplication->getAuthManager()
+#8 C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php(46): WebUser->checkAccess()
+#9 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(49): UserController->actionGetToken()
+#10 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(286): UserController->runAction()
+#12 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#13 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): UserController->run()
+#14 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\OpenServer\domains\blogs.org\index.php(13): CWebApplication->run()
+REQUEST_URI=/api/user/getToken
+in C:\OpenServer\domains\blogs.org\protected\components\WebUser.php (21)
+in C:\OpenServer\domains\blogs.org\protected\components\WebUser.php (15)
+in C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php (17)
+2014/09/08 20:14:57 [error] [exception.CException] exception 'CException' with message 'Unknown authorization item "".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CPhpAuthManager.php:179
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php(17): CPhpAuthManager->assign(NULL, '99')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CModule.php(387): PhpAuthManager->init()
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(185): CModule->getComponent('authManager')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(815): CWebApplication->getAuthManager()
+#4 C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php(46): CWebUser->checkAccess('administrator')
+#5 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(49): UserController->actionGetToken()
+#6 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('getToken')
+#10 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/getTok...')
+#11 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/api/user/getToken
+---
+2014/09/08 20:15:26 [error] [exception.CException] exception 'CException' with message 'Unknown authorization item "".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CPhpAuthManager.php:179
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\protected\components\PhpAuthManager.php(17): CPhpAuthManager->assign(NULL, '99')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CModule.php(387): PhpAuthManager->init()
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(185): CModule->getComponent('authManager')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\auth\CWebUser.php(815): CWebApplication->getAuthManager()
+#4 C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php(46): CWebUser->checkAccess('administrator')
+#5 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\actions\CInlineAction.php(49): UserController->actionGetToken()
+#6 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('getToken')
+#10 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/getTok...')
+#11 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/api/user/getToken
+---
+2014/09/08 20:40:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/articles /view".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/articles /v...')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/api/articles%20/view
+---
+2014/09/08 20:41:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/articles /view/id/4".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/articles /v...')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/api/articles%20/view/id/4
+---

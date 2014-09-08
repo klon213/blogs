@@ -40,6 +40,7 @@ return array(
 	'components'=>array(
 		'user'=>array(
 			// enable cookie-based authentication
+			'class'=>'WebUser',
 			'allowAutoLogin'=>true,
 		),
 		'bootstrap' => array(
@@ -80,6 +81,11 @@ return array(
 			'charset' => 'utf8',
 		),
 
+		'authManager' => array(
+			'class' => 'PhpAuthManager',
+			'defaultRoles' => array('guest'),
+		),
+
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
@@ -100,6 +106,8 @@ return array(
 			),
 		),
 	),
+
+
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
