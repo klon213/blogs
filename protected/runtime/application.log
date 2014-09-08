@@ -818,3 +818,231 @@ REQUEST_URI=/api/articles
 in C:\OpenServer\domains\blogs.org\protected\components\ApiController.php (114)
 in C:\OpenServer\domains\blogs.org\protected\components\ApiController.php (149)
 in C:\OpenServer\domains\blogs.org\index.php (13)
+2014/09/08 11:55:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/09/08 11:57:35 [warning] [application] Failed to set unsafe attribute "token" of "TblUsers".
+in C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php (24)
+in C:\OpenServer\domains\blogs.org\index.php (13)
+2014/09/08 11:57:35 [warning] [application] Failed to set unsafe attribute "text" of "TblUsers".
+in C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php (24)
+in C:\OpenServer\domains\blogs.org\index.php (13)
+2014/09/08 11:57:35 [warning] [application] Failed to set unsafe attribute "article_id" of "TblUsers".
+in C:\OpenServer\domains\blogs.org\protected\controllers\api\UserController.php (24)
+in C:\OpenServer\domains\blogs.org\index.php (13)
+2014/09/08 12:31:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "route69".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('route69')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('route69')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/route69')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/route69
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 12:31:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "route69".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('route69')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('route69')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/route69')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/route69
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 12:31:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "route69".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('route69')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('route69')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/route69')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/route69
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 12:31:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "route69".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('route69')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('route69')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/route69')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/route69
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 12:33:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "route3".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('route3')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('route3')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/route3')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/route3
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 12:33:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "route3".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('route3')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('route3')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/route3')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/route3
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 12:33:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "route3".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('route3')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('route3')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/route3')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/route3
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 12:53:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/09/08 12:54:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ListArticles".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('ListArticles')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('ListArticles')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Angular/ListArt...')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Angular/ListArticles
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 12:54:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ListArticles".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('ListArticles')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('ListArticles')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Angular/ListArt...')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Angular/ListArticles
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 12:55:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ListArticles".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('ListArticles')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('ListArticles')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Angular/ListArt...')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Angular/ListArticles
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 14:03:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ViewArticles".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('ViewArticles')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('ViewArticles')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/ViewArticl...')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/ViewArticles
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 14:03:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ViewArticles".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('ViewArticles')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('ViewArticles')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/ViewArticl...')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/ViewArticles
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 14:03:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ViewArticles".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('ViewArticles')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('ViewArticles')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/ViewArticl...')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/ViewArticles
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 14:09:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/articles/vi...')
+#5 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/api/articles/view
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 14:09:40 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#4 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/articles/vi...')
+#5 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/api/articles/view
+HTTP_REFERER=http://blogs.org/site/articles
+---
+2014/09/08 15:47:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/09/08 15:48:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/09/08 15:59:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/09/08 17:43:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "signIn".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CController.php(270): CController->missingAction('signIn')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(282): CController->run('signIn')
+#2 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/user/signIn')
+#3 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/api/user/signIn
+---

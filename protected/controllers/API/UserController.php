@@ -10,13 +10,23 @@ class UserController extends ApiController
 {
     private  $model;
 
+	/*
+	 * @name
+	 * @login
+	 * @avatar (file)
+	 * @pass
+	 * @email
+	 */
 
     public function actionSignUp()
     {
         $model = new TblUsers();
         $model->setAttributes($_POST);
-        $model->save();
-        $this->sendResponse($model);
+        if($model->save()){
+			$this->sendResponse(200, 'success');
+		}else{
+			$this->sendResponse($model);
+		}
     }
 
 	public function actionGetValidationMail($validationKey)

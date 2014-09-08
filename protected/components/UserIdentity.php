@@ -50,6 +50,10 @@ class UserIdentity extends CUserIdentity
 		{
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		}
+		else if($record->is_verified==0)
+		{
+			$this->errorCode=self::ERROR_UNKNOWN_IDENTITY;
+		}
 		else
 		{
 			$this->_id=$record->id;

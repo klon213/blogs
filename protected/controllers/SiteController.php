@@ -69,7 +69,88 @@ class SiteController extends Controller
 
 	public function actionListArticles()
 	{
-		echo "test"; //file_get_contents("angular.php");
+		//echo  "test"; //file_get_contents("site/angular.php");
+		echo
+		'<html ng-app>
+			<script>
+				function Article($scope, $http) {
+					$http.get("http://blogs.org/api/articles/").
+					success(function(data) {
+					$scope.article = data.data;
+					console.log(data);
+					});
+				}
+			</script>
+			<body>
+				<div ng-controller="Article">
+					<div ng-repeat="item in article">
+						<p>ID: {{item.id}}</p>
+						<p>Title: {{item.title}}</p>
+						<p>Content: {{item.text}}</p>
+						<p><a href="#/view/{{item.id}}">{{item.title}}</a></p>
+					</div>
+				</div>
+			</body>
+		</html>';
+
+	}
+
+	public function actionViewArticles()
+	{
+		echo
+		'<html ng-app>
+			<script>
+				function Article($scope, $http, $routeParams) {
+					var currentId = $routeParams.id;
+					$http.get("http://blogs.org/api/articles/view/id/" + currentId).
+					success(function(data) {
+					$scope.article = data;
+					console.log(data);
+					});
+				}
+			</script>
+			<body>
+				<div ng-controller="Article">
+					<div ng-repeat="item in article">
+						<p>Title: {{item.title}}</p>
+						<p>Text: {{item.text}}</p>
+					</div>
+				</div>
+			</body>
+		</html>';
+	}
+
+	public function actionCreateArticle()
+	{
+		echo '
+		<script>
+			function formController($scope, $http){
+    $scope.submit=function(){
+    	//$http.post("http://blogs.org/api/articles/create", angular.toJSON($scope.LovelyFormData)).
+    	 var request = $http({
+                    method: "post",
+                    url: "http://blogs.org/api/articles/create",
+
+                    data: {
+                        title: $scope.LovelyFormData.Title,
+                        text: $scope.LovelyFormData.Text
+                    },
+                    headers:{
+                    Authorization: "3bAfLaRxyJk7HyBfR6FgImF+9K38rERD"
+                    }
+                });
+    }
+}
+	</script>
+	<div ng-app="">
+    <form name="LovelyForm" novalidate ng-controller="formController" ng-submit="submit()" >
+        <input type="text" name="Title" placeholder="Title" ng-model="LovelyFormData.Title" required/>
+        <br>
+        <textarea name="Text" placeholder="Text" ng-model="LovelyFormData.Text" required/>
+        <br>
+        <input type="submit" value="Send Text" ng-disabled="LovelyForm.$invalid">
+    </form>
+</div>';
 	}
 	/**
 	 * Displays the contact page

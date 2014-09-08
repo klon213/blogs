@@ -20,6 +20,9 @@ class TblUsers extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+	const ROLE_USER = 'user';
+	const ROLE_GUEST = 'guest';
+
     public $pic;
     public $repeatPass;
 
@@ -115,7 +118,7 @@ class TblUsers extends CActiveRecord
             //DBug::stop($_POST);
             $this->pass=md5($this->pass);
             $this->is_verified = 0;
-            $this->token_api = null;
+            $this->token_api = sha1(time());
             $pic = CUploadedFile::getInstanceByName('pic');
             if(isset($pic)){
                 $picName = Yii::getPathOfAlias('webroot.images') . DIRECTORY_SEPARATOR . $this->login . '.' . $pic->extensionName;
