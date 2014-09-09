@@ -43,6 +43,18 @@ class ArticlesController extends ApiController
 		return $this->sendResponse($data);
 	}
 
+	public function actionGetAll()
+	{
+		$data = TblArticles::model()->findAll();
+		return $this->sendResponse($data);
+	}
+
+	public function actionGetUnpublished()
+	{
+		$data = TblArticles::model()->findAll('is_published=' . TblArticles::IS_NOT_PUBLISHED);
+		return $this->sendResponse($data);
+	}
+
 	/*
 		 * token : string
 		 * title : string

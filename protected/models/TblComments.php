@@ -18,6 +18,10 @@ class TblComments extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+
+	const SUBSCRIBED_FOR_COMMENTS = 1;
+	const UNSUBSCRIBED_FROM_COMMENTS = 0;
+
 	public function tableName()
 	{
 		return 'tbl_comments';
@@ -32,6 +36,7 @@ class TblComments extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			//array('article_id', 'required'),
+			//array('guestmail', 'required'),
 			array('user_id, article_id, notify_author, parent_id', 'numerical', 'integerOnly'=>true),
 			array('guestmail','length', 'max'=>255),
 			array('guestmail', 'email'),
@@ -138,12 +143,27 @@ class TblComments extends CActiveRecord
 		if(Yii::app()->user->id){
 			$this->user_id = Yii::app()->user->id;
 			return !$this->hasErrors();
-		}else{
-			if($this->guestmail){
-				return !$this->hasErrors();
-			}
+		}else if ($this->guestmail) {
+			return !$this->hasErrors();
 		}
+		else{
+			return false;
+		}
+		/*if(Yii::app()->user->id){
+			$this->user_id = Yii::app()->user->id;
+			$this->guestmail = $this->user['email'];
+			return !$this->hasErrors();
+		}*/
 	}
+/*
+	public function beforeValidation()
+	{
+		if(Yii::app()->user->id){
+			$this->user_id = Yii::app()->user->id;
+			$this->guestmail = 'val@email.com'; // '$this->user['email']';
+			return false;
+		}
+	}*/
 
 	public function beforeDelete()
 	{

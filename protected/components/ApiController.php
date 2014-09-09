@@ -30,7 +30,8 @@ class ApiController extends CController
 		'getToken',
 		'signUp',
 		'index',
-		'view'
+		'view',
+		'commentArticle'
 	);
 
     public function getStatusMessage($code)

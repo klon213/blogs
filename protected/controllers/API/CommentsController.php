@@ -7,8 +7,6 @@
  */
 class CommentsController extends ApiController
 {
-	public function actionCommentArticle()
-	{
 	/*
 	 * @article_id
 	 * @user_mail
@@ -16,6 +14,8 @@ class CommentsController extends ApiController
 	 * @token
 	 *
 	 */
+	public function actionCommentArticle()
+	{
 		if(!isset($_POST['parent_id']))
 		{
 			$model = new TblComments();
@@ -59,8 +59,24 @@ class CommentsController extends ApiController
 	public function actionDelete()
 	{
 		$article = TblComments::model()->findByPk($_POST['id']);
-		$article->delete();
-		$this->sendResponse($article);
+		if($article->user_id == Yii::app()->user->id){
+			$article->delete();
+			$this->sendResponse($article);
+		}else{
+			$this->sendResponse(403);
+		}
 	}
 
+	public function actionSubscribeForComments()
+	{
+		$model = new TblComments();
+		if($model->user_id == Yii::app()->user->id){
+			$model->findByPk($_POST['id']);
+			$model->notify_author = $model::SUBSCRIBED_FOR_COMMENTS;
+			$model->save();
+			$model->sendResponse($model);
+		}else{
+			$model->sendResponse(403);
+		}
+	}
 }

@@ -17,6 +17,7 @@
  */
 class TblArticles extends CActiveRecord
 {
+	const IS_NOT_PUBLISHED = 0;
 	const IS_PUBLISHED = 1;
 	public $pic;
 	/**
@@ -42,6 +43,7 @@ class TblArticles extends CActiveRecord
 			array('pub_date', 'safe'),
 			array('pic', 'file', 'types'=>'jpg, jpeg, gif, png', 'safe'=>true, 'allowEmpty'=>true),
 			array('pic', 'safe'),
+			array('is_published', 'in', 'range'=>array(0, 1)),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, user_id, pic, title, text, is_published, pub_date', 'safe', 'on'=>'search'),
@@ -82,7 +84,9 @@ class TblArticles extends CActiveRecord
 			'published'=>array(
 				'condition' => 'is_published=' . self::IS_PUBLISHED
 			),
-
+			'thousand'=>array(
+				'limit'=>2
+			)
 		);
 	}
 

@@ -59,14 +59,10 @@ class UserController extends ApiController
 
 	}
 
-
-
 	private function storeToken($login, $token)
 	{
 		$user = TblUsers::model()->find("login='" . $login . "'");
 		$user->token_api = $token;
 		$user->update();
 	}
-
-
 }
