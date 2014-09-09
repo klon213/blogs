@@ -7,31 +7,25 @@
  */
 class ArticlesController extends ApiController
 {
+/*
+	public function filters()
+	{
+		return array(
+			'accessControl',
+		);
+	}
 
 	public function accessRules()
 	{
 		return array(
-			array(
-				'deny',
-				'actions' => array(
-				'index',
-				),
-				'roles' => array(
-					TblUsers::ROLE_ADMIN, // 'user'
-				),
-			),
-			array(
-				'allow',
-				'actions' => array(
-					'view',
-				),
-				'roles' => array(
-					User::ROLE_GUEST,
-				),
+
+			array('deny', // deny all other actions
+				'actions'=>array('index'),
+				'roles' => array('*'),
 			),
 		);
 	}
-
+*/
 	public function actionIndex()
     {
 		if (isset($_POST['begin_date']) && isset($_POST['end_date'])){
@@ -71,10 +65,14 @@ class ArticlesController extends ApiController
 	 * */
 	public function actionEdit()
 	{
-		$article = TblArticles::model()->findByPk($_POST['id']);
-		$article->setAttributes($_POST);
-		$article->save();
-		$this->sendResponse($article);
+		if(Yii::app()->user->checkAccess('user')){
+			$article = TblArticles::model()->findByPk($_POST['id']);
+			$article->setAttributes($_POST);
+			$article->save();
+			$this->sendResponse($article);
+		}else
+			$this->sendResponse(401);
+
 	}
 
 		/*

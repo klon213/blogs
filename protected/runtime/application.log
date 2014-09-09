@@ -1246,3 +1246,28 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/api/articles%20/view/id/4
 ---
+2014/09/09 11:19:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/09/09 13:43:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\OpenServer\domains\blogs.org\www\protected\vendor\yiisoft\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\OpenServer\domains\blogs.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/09/09 14:56:01 [warning] [application] Failed to set unsafe attribute "id" of "TblArticles".
+in C:\OpenServer\domains\blogs.org\protected\controllers\api\ArticlesController.php (69)
+in C:\OpenServer\domains\blogs.org\index.php (13)
+2014/09/09 14:58:01 [warning] [application] Failed to set unsafe attribute "id" of "TblArticles".
+in C:\OpenServer\domains\blogs.org\protected\controllers\api\ArticlesController.php (70)
+in C:\OpenServer\domains\blogs.org\index.php (13)
+2014/09/09 14:58:53 [warning] [application] Failed to set unsafe attribute "id" of "TblArticles".
+in C:\OpenServer\domains\blogs.org\protected\controllers\api\ArticlesController.php (70)
+in C:\OpenServer\domains\blogs.org\index.php (13)

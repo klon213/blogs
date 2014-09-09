@@ -82,6 +82,7 @@ return array(
 		),
 
 		'authManager' => array(
+		//	'class' => 'CPhpAuthManager',
 			'class' => 'PhpAuthManager',
 			'defaultRoles' => array('guest'),
 		),

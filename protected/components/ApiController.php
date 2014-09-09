@@ -26,6 +26,13 @@ class ApiController extends CController
      * @return bool
      */
 
+	public $allowedActions = array(
+		'getToken',
+		'signUp',
+		'index',
+		'view'
+	);
+
     public function getStatusMessage($code)
     {
         $messages = array(
@@ -120,6 +127,11 @@ class ApiController extends CController
 
     protected function beforeAction($action)
     {
+		/*if(Yii::app()->user->checkAccess('administrator')){
+			echo "hello, I'm administrator";
+		}*/
+		//DBug::stop(Yii::app()->user->checkAccess('user'));
+
         $postData = json_decode(file_get_contents('php://input'), true);
         if ($postData)
             $_POST = array_merge_recursive($_POST, $postData);
@@ -132,10 +144,9 @@ class ApiController extends CController
 
         header('Content-type: application/json');
 
-
-
         // authorization is necessary for the action and a token, then check them
-       // $needAuth = !in_array($action->id, $this->allowedActions);
+       $needAuth = !in_array($action->id, $this->allowedActions);
+		//DBug::stop($needAuth);
 
         $headers = apache_request_headers();
 
@@ -149,13 +160,13 @@ class ApiController extends CController
             }
         }
 
-      /*  if ($needAuth && empty($login))
+     if ($needAuth && empty($login))
         {
             if (empty($user) && !empty($userId))
                 $this->sendResponse(404);
             else
                 $this->sendResponse(401);
-        }*/
+        }
 
         return true;
     }
